@@ -34,8 +34,11 @@
             <!-- Cross-site request forgery Protection-->
         {% csrf_token %}
         <div class=" input-group">
-    
+        
+        {% comment %} Searchbar {% endcomment %}
+        {% spaceless %}
         <input type="text" class="form-control" name="city" placeholder="Choose Your City ...">
+        {% endspaceless %}
         <div class="input-group-btn">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>

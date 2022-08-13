@@ -7,6 +7,7 @@ import json
 def index(request):
     if request.method == 'POST':
         city = request.POST['city']
+        city = city.replace(" ", "%20")
         source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=d0993b32cf3e8409052fec7c281fa054').read()
         # Converting the JSON data to a dictionary
         # The 'list_of_data' will hold everythin that we are requesting
